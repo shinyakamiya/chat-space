@@ -28,29 +28,30 @@ Things you may want to cover:
 |------|----|-------|
 |email|string|null: false, foreign_key: true|
 |password|string|null: false, foreign_key: true|
-|username|string|null: false, foreign_key: true|
+|name|string|null: false｜
 ### Association
 - has_many :messages
-- has_many :groups
-- has_many  :through:  :groups_users
+- has_many  :through: :groups_users
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text||
-|message|text|null: false|
+|message|text|
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
-- belongs_to :groups
-- has_many  :through:  :groups_users
+- belongs_to :user
+- belongs_to :group
+- has_many  :through: :groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|null: null: false, foreign_key: true|
+|name|string|null: false|
 ### Association
-- has_many  :messages
+- has_many :messages
+- has_many :through: :groups_users
 
 
 ## groups_usersテーブル
