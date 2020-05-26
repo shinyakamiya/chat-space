@@ -5,31 +5,36 @@
         = current_user.name
       %ul.side-bar__side-header__box__top-items__icon
         %li.side-bar__side-header__box__top-items__icon__edit
-          = link_to "#", class: "edit" do
+          = link_to new_group_path do
             = icon('fas', 'pen-square', class: 'icon')
         %li.side-bar__side-header__box__top-items__icon__new-group
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'icon')
 
   .side-bar__groups
-    .side-bar__groups__group
-      = link_to "#", class: "group" do 
-        %p.side-bar__groups__group__name
-          こんにちは
-        %p.side-bar__groups__group__message
-          メッセージがありません
+    - current_user.groups.each do |group|
+      .side-bar__groups__group
+        = link_to "#", class: "group" do 
+          %p.side-bar__groups__group__name
+            = group.name
+          %p.side-bar__groups__group__message
+            メッセージはまだありません。
 
-    .side-bar__groups__group
-      = link_to "#", class: "group" do 
-        %p.side-bar__groups__group__name
-          こんにちは
-        %p.side-bar__groups__group__message
-          メッセージがありません
+  .side-bar__groups
+    - current_user.groups.each do |group|
+      .side-bar__groups__group
+        = link_to "#", class: "group" do 
+          %p.side-bar__groups__group__name
+            = group.name
+          %p.side-bar__groups__group__message
+            メッセージはまだありません。
 
-    .side-bar__groups__group
-      = link_to "#", class: "group" do 
-        %p.side-bar__groups__group__name
-          こんにちは
-        %p.side-bar__groups__group__message
-          メッセージがありません                
+  .side-bar__groups
+    - current_user.groups.each do |group|
+      .side-bar__groups__group
+        = link_to "#", class: "group" do 
+          %p.side-bar__groups__group__name
+            = group.name
+          %p.side-bar__groups__group__message
+            メッセージはまだありません。
     
