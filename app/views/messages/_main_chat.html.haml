@@ -1,41 +1,25 @@
 %div.chat-main
   .chat-main__header
     .chat-main__header__box
-      %h2.chat-main__header__box__left-box
-        あいうえお
-      %a.chat-main__header__box__member-list
-        Member : 桃太郎 浦島太郎 金太郎
-
-    %a.chat-main__header__right-box Edit
-      
+      .chat-main__header__box__left-box
+        = @group.name
+      .chat-main__header__box__member-list
+        Member :
+        - @group.users.each do |user|
+          =user.name
+    
+    .right-header
+      = link_to "Edit", edit_group_path(@group), class: "edit-btn btn" 
 
   .chat-main__message
-    .chat-main__message__mess
-      .chat-main__message__mess__info
-        %p.chat-main__message__mess__info__sendr 桃太郎
-        %p.chat-main__message__mess__info__date 2020/05/24(sun) 00:00:00
-      %p.chat-main__message__mess__text おはよう
+    = render @messages
 
-    .chat-main__message__mess
-      .chat-main__message__mess__info
-        %p.chat-main__message__mess__info__sendr 浦島太郎
-        %p.chat-main__message__mess__info__date 2020/05/24(sun) 00:00:00
-      %p.chat-main__message__mess__text こんにちは
-
-    .chat-main__message__mess
-      .chat-main__message__mess__info
-        %p.chat-main__message__mess__info__sendr 金太郎
-        %p.chat-main__message__mess__info__date 2020/05/24(sun) 00:00:00
-      %p.chat-main__message__mess__text こんばんわ
-
-
-
-  .chat-main__form
-    %form.new_message
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('far', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", value: "Send", class: "submit-btn"} 
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
 

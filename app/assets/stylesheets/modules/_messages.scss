@@ -37,7 +37,7 @@
 
         
 
-          &__edit {
+          .edit_bo {
             margin-right: 5px;
           }
         }  
@@ -103,15 +103,16 @@
         }
       }
 
-      &__right-box {
-        color: #38aef0;
-        font-size: 16px;
+      .right-header {
+        border: 1px solid $light_blue;
+        color: $light_blue;
+        float: right;
         height: 40px;
-        margin-top: 30px;
-        border: solid 1px #38aef0;
-        padding: 0 20px;
         line-height: 40px;
+        margin-top: 28px;
+        padding: 0 20px;
       }
+   
     } 
 
     &__message { 
@@ -148,50 +149,40 @@
       }
     }
 
-    &__form {
-      background-color: #d2d2d2;
+    .form {
+      background-color: #DDDDDD;
+      box-sizing: border-box;
       height: 90px;
-      width:calc(100vw - 300px);
-      padding: 20px 40px;
-      
-      form {
-        display: flex;
-      
-
-        .input-box {
-          display: flex;
-          width: 100%;
-          position: relative;
-          &__text {
-            height: 50px;
-            width: 100%;
-            color: #434a54;
-            border-style: none;
-            padding: 0 40px 0 10px;
-          }
-          &__image {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-size: 1.3rem;
-
-            &__file {
-              display: none;
-            }
-          }
-        }
-      } 
-      .submit-btn {
-        width: 100px;
+      padding: 20px 50px 20px 40px;
+      &__message {
+        border: none;
+        float: left;
         height: 50px;
-        padding: 0 30px;
-        margin-left: 15px;
-        background-color: #38aef0;
-        color: white;
-        cursor: pointer;
+        width: calc(100% - 150px);
       }
-    
+      &__mask {
+        background-color: $white;
+        float: left;
+        height: 50px;
+        padding-right: 10px;
+        &__image {
+          font-size: 20px;
+          line-height: 50px;
+        }
+        .hidden {
+          display: none;
+        }
+      }
+      &__submit {
+        background-color: $light_blue;
+        border: none;
+        color: $white;
+        float: right;
+        font-size: 16px;
+        height: 50px;
+        margin-left: 15px;
+        padding: 0 30px;
+      }
+    }
     }
   }
-}
