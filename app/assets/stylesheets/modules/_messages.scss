@@ -37,9 +37,7 @@
 
         
 
-          .edit_bo {
-            margin-right: 5px;
-          }
+
         }  
       }
     }
@@ -103,7 +101,7 @@
         }
       }
 
-      .right-header {
+      .chat-main__header__right-header {
         border: 1px solid $light_blue;
         color: $light_blue;
         float: right;
@@ -111,6 +109,12 @@
         line-height: 40px;
         margin-top: 28px;
         padding: 0 20px;
+
+        &__edit-btn {
+          margin-right: 5px;
+          text-decoration: none;
+          color: #38aef0;
+        }
       }
    
     } 
@@ -120,6 +124,7 @@
       height: calc(100vh - 190px);
       width:calc(100vw - 300px);
       padding: 46px 40px;
+      overflow: scroll;
 
       &__mess {
         padding-bottom: 40px;
