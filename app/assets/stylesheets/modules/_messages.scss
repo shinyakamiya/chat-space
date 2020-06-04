@@ -36,6 +36,7 @@
         &__top-items__icon {
           display: flex;
 
+
           &__edit {
             margin-right: 5px;
             font-size: 15px;
@@ -44,8 +45,6 @@
           &__new-group {
             font-size: 15px;
           }
-
-
         }  
       }
     }
@@ -58,8 +57,6 @@
       background-color: #2f3e51;
       height: calc(100vh - 100px);
       padding: 20px 20px 0;
-
-      
 
       .side-bar__groups__group {
         color: white;
@@ -174,6 +171,7 @@
         width: calc(100% - 150px);
         padding-left: 10px;
       }
+
       &__mask {
         background-color: $white;
         float: left;
@@ -188,6 +186,7 @@
           display: none;
         }
       }
+
       &__submit {
         background-color: $light_blue;
         border: none;
@@ -200,5 +199,5 @@
         cursor: pointer;
       }
     }
-    }
   }
+}

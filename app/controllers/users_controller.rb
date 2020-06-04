@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
   end
+
   def index
     return nil if params[:keyword] == ""
     @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
       format.json
     end
   end
+
   def update
     if current_user.update(user_params)
       redirect_to root_path
